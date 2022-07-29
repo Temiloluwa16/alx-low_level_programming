@@ -5,7 +5,7 @@
  * @b: is the number of bytes to be allocated
  * Return: pointer to the aloocated memory space
  */
-void *malloc_checked(unsigned int b);
+void *malloc_checked(unsigned int b)
 {
 void *x;
 x = malloc(b);
