@@ -10,11 +10,11 @@ char *str_concat(char *s1, char *s2)
 {
 char *s;
 int size1 = 0, size2 = 0, i, j;
-if (!s2)
+if (!s1)
 s2 = "";
 if (!s2)
 s2 = "";
-while (s2[size1] != '\0')
+while (s1[size1] != '\0')
 {
 size1++;
 }
