@@ -4,34 +4,37 @@
  * alloc_grid - is a function that creates 2d array
  * @width: is the width of the array
  * @height: is the weight of the array
- * Return: a pointer to the 2d array, or NULL if it fails
+ * Return: a pointer to the 2d array, or NULL if it it fails
  */
 int **alloc_grid(int width, int height)
 {
-int **arr;
-int i, j;
+int i, j, k, l;
+int **a;
 if (width <= 0 || height <= 0)
 return (NULL);
-arr = malloc(sizeof(int *) * height);
-if (arr == 0)
+a = malloc(height * sizeof(int *));
+if (a == NULL)
+{
+free(a);
 return (NULL);
+}
 for (i = 0; i < height; i++)
 {
-arr[i] = (malloc(sizeof(int) * width));
-if (arr[i] == 0)
+a[i] == malloc(width * sizeof(int));
+if (a[i] == NULL)
 {
-while (i >= 0)
+for (j = i; j >= 0; j--)
 {
-free(arr[i];
-i--;
+free(a[j]);
 }
-free(arr);
+free(a);
 return (NULL);
 }
-for (j = 0; j < width; j++)
+}
+for (k = 0; k < height; k++)
 {
-arr[i][j] = 0;
+for (l = 0; l < width; l++)
+a[k][l] = 0;
 }
-}
-return (arr);
+return (a);
 }
